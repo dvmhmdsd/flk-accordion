@@ -1,0 +1,49 @@
+.flk-accordion {
+    // Picasso is ready to draw :)
+    > .accordion-heading {
+        font-weight: bold;
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        color: #444;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding-right: 2rem;
+        margin-bottom: 0;
+
+        .icon {
+            float: $right;
+        }
+    }
+
+    &.rtl {
+        .closed-icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    > .accordion-body {
+        border-top: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    &.expanded {
+        > .accordion-body {
+            overflow-y: hidden;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        > .accordion-heading {
+            background: #eee;
+        }
+    }
+
+    &+.flk-accordion {
+        .accordion-heading {
+            border-top: none;
+        }
+    }
+}

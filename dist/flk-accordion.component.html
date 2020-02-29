@@ -1,0 +1,10 @@
+<div class="flk-accordion {{ Config.get('app.direction') }}" [class]="{expanded: this.isExpanded}">
+    <h2 class="accordion-heading" (click)="this.toggle()">
+        {{ this.inputs.getOption('heading') }}
+        <fa *if="! this.isExpanded" icon="angle-right closed-icon"></fa>
+        <fa *else icon="angle-down"></fa>
+    </h2>
+    <div class="accordion-body" [style]="{maxHeight: this.maxHeight}" (ready)="this.panel = $el">
+        <content></content>
+    </div>
+</div>
